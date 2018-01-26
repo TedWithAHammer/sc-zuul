@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+server:
+  port: 40001
+spring:
+  application:
+    name: zuul
+zuul:
+  routes:
+    api-30001:
+      path: /api-30001/**
+      serviceId: ribbon
+    api-30002:
+      path: /api-30002/**
+      serviceId: feign
